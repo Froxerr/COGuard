@@ -2,7 +2,7 @@
   <br>
   <img src="https://github.com/Froxerr/COGuard/blob/main/github-img/main_logo_rectangle.jpg" alt="Proje Logo" width="120"/>
   <br>
-  D1D0
+  <img src="https://github.com/Froxerr/COGuard/blob/main/github-img/yazi-logo.png" alt="Proje Logo" width="120"/>
   <br>
 </h1>
 
