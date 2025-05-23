@@ -219,4 +219,4 @@ Kullanıcıya ortam durumu ve alarmları gösterir, bildirimler gönderir ve eş
 - Sorularınız için: aktasnursen813@gmail.com
 ---
 
-**Hazırlayanlar:** Nurşen AKTAŞ, İbrahim ARAL
+**Hazırlayanlar:** İbrahim ARAL, Nurşen AKTAŞ
