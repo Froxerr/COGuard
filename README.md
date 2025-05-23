@@ -82,6 +82,7 @@ Akıllı güvenlik sisteminin kalbini oluşturan bu donanım, ortamdan karbonmon
    - API sunucu IP adresi
 5. Kodu ESP8266'ya yükleyin.
 6. Cihazı başlatın ve seri monitörden bağlantıyı kontrol edin.
+7. Lütfen sorun yaşarsanız beni-oku.pdf dosyasını da okumayı unutmayın.
 
 ### Kullanım
 - Sensörler ortamı izler, veriler otomatik olarak sunucuya iletilir.
@@ -103,6 +104,7 @@ Donanımdan gelen verileri güvenli şekilde alıp Firebase'e aktaran, sistemin 
 2. `index.php` dosyasını sunucuya yerleştirin.
 3. Dosya başındaki `firebaseUrl` ve `firebaseKey` değişkenlerini yeni Firebase bilgilerinizle güncelleyin.
 4. Sunucuyu başlatın.
+5. Lütfen sorun yaşarsanız beni-oku.pdf dosyasını da okumayı unutmayın.
 
 ### Kullanım
 - ESP8266, bu API'ye veri gönderir.
@@ -139,6 +141,7 @@ Kullanıcı ve admin girişleri, sensör verilerinin ve alarmların izlenmesi, e
 2. `storage/app/` dizinine `firebase-credentials.json` dosyasını ekleyin.
 3. `resources/views/panel/layouts/app.blade.php` içinde Firebase yapılandırma objesini güncelleyin.
 4. Giriş için: `admin@gmail.com` / `123123`
+5. Lütfen sorun yaşarsanız beni-oku.pdf dosyasını da okumayı unutmayın.
 
 ### Kullanım
 - Web panel üzerinden tüm sistem yönetilebilir.
@@ -160,6 +163,7 @@ Kullanıcıya ortam durumu ve alarmları gösterir, bildirimler gönderir ve eş
 1. Firebase'den `google-services.json` dosyasını indirip uygulama dizinine ekleyin.
 2. Giriş için: `admin@gmail.com` / `123123`
 3. Android Studio ile projeyi açın ve derleyin.
+4. Lütfen sorun yaşarsanız beni-oku.pdf dosyasını da okumayı unutmayın.
 
 ### Kullanım
 - Mobil uygulama ile ortam durumu ve alarmlar takip edilebilir.
@@ -189,8 +193,7 @@ Kullanıcıya ortam durumu ve alarmları gösterir, bildirimler gönderir ve eş
 - Katkıda bulunmak için lütfen bir pull request gönderin veya issue açın.
 - Lisans bilgisi için proje sahibine başvurunuz.
 - Sorularınız için: ibrahimaral20@gmail.com
-
+- Sorularınız için: aktasnursen813@gmail.com
 ---
 
-**Hazırlayanlar:** Nurşen AKTAŞ, İbrahim ARAL  
-**Danışman:** Kamil Akgün 
+**Hazırlayanlar:** Nurşen AKTAŞ, İbrahim ARAL
