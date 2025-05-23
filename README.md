@@ -220,3 +220,6 @@ Kullanıcıya ortam durumu ve alarmları gösterir, bildirimler gönderir ve eş
 ---
 
 **Hazırlayanlar:** İbrahim ARAL, Nurşen AKTAŞ
+> LinkedIn https://www.linkedin.com/in/ibrahim-aral-99804a344/ <br>
+> GitHub https://github.com/NURSENAKTAS &nbsp;&middot;&nbsp; <br>
+> LinkedIn https://www.linkedin.com/in/nurşen-aktaş-329193303/
