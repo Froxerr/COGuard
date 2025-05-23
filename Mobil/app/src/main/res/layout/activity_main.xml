@@ -1,0 +1,447 @@
+<?xml version="1.0" encoding="utf-8"?>
+<androidx.constraintlayout.widget.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:id="@+id/main"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    tools:context=".MainActivity">
+
+    <View
+        android:id="@+id/maviDikdortgen"
+        android:layout_width="0dp"
+        android:layout_height="0dp"
+        android:background="#3AA0FF"
+        app:layout_constraintHeight_percent="0.4"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent" />
+
+    <View
+        android:id="@+id/maviDikdortgen2"
+        android:layout_width="0dp"
+        android:layout_height="2dp"
+        android:layout_marginHorizontal="16dp"
+        android:layout_marginTop="16dp"
+        android:background="#E8E8E8"
+        app:layout_constraintBottom_toTopOf="@+id/textView6"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="0.0"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/progressContainer" />
+
+    <View
+        android:id="@+id/maviDikdortgen3"
+        android:layout_width="0dp"
+        android:layout_height="2dp"
+        android:layout_marginHorizontal="16dp"
+        android:layout_marginTop="16dp"
+        android:background="#E8E8E8"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@id/temperatureContainer" />
+
+    <View
+        android:id="@+id/maviDikdortgen4"
+        android:layout_width="0dp"
+        android:layout_height="2dp"
+        android:layout_marginHorizontal="16dp"
+        android:layout_marginTop="16dp"
+        android:background="#E8E8E8"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@id/humidityContainer" />
+
+    <ImageView
+        android:id="@+id/emojiImage"
+        android:layout_width="85dp"
+        android:layout_height="75dp"
+        android:layout_marginTop="112dp"
+        android:src="@drawable/normal"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent" />
+
+    <TextView
+        android:id="@+id/textView"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="38dp"
+        android:fontFamily="sans-serif"
+        android:text="Kontrol Paneli"
+        android:textColor="#FFFFFF"
+        android:textSize="25sp"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent" />
+
+    <TextView
+        android:id="@+id/moodId"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="12dp"
+        android:fontFamily="sans-serif"
+        android:text="Normal"
+        android:textColor="#FFFFFF"
+        android:textSize="25sp"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@id/emojiImage" />
+
+    <TextView
+        android:id="@+id/textView10"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginStart="16dp"
+        android:layout_marginTop="20dp"
+        android:fontFamily="@font/inter_semi_bold"
+        android:text="Odanın Hava Kalitesi"
+        android:textColor="#000000"
+        android:textSize="20sp"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@id/maviDikdortgen" />
+
+    <ImageView
+        android:id="@+id/co2image"
+        android:layout_width="42dp"
+        android:layout_height="38dp"
+        android:layout_marginStart="16dp"
+        android:layout_marginTop="16dp"
+        android:src="@drawable/co"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@id/textView10" />
+
+    <TextView
+        android:id="@+id/textView4"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginStart="11dp"
+        android:fontFamily="@font/inter_semi_bold"
+        android:text="CO Seviyesi"
+        android:textColor="#000000"
+        android:textSize="12sp"
+        app:layout_constraintBottom_toTopOf="@id/progressContainer"
+        app:layout_constraintStart_toEndOf="@id/co2image"
+        app:layout_constraintTop_toTopOf="@id/co2image" />
+
+    <LinearLayout
+        android:id="@+id/progressContainer"
+        android:layout_width="0dp"
+        android:layout_height="wrap_content"
+        android:orientation="vertical"
+        android:layout_marginEnd="16dp"
+        app:layout_constraintStart_toStartOf="@id/textView4"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintTop_toBottomOf="@id/textView4">
+
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:orientation="horizontal">
+
+                <com.example.finalapp.CustomProgressBar
+                    android:id="@+id/coProgressBar"
+                    android:layout_width="0dp"
+                    android:layout_weight="1"
+                    android:layout_height="14dp" />
+
+                <TextView
+                    android:id="@+id/textView5"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_marginStart="8dp"
+                    android:fontFamily="sans-serif-light"
+                    android:text=""
+                    android:textColor="#000000"
+                    android:textSize="12sp" />
+        </LinearLayout>
+
+        <TextView
+            android:id="@+id/coTextView"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_gravity="start"
+            android:fontFamily="sans-serif"
+            android:text="0 ppm"
+            android:textColor="#000"
+            android:textSize="12sp" />
+
+        <TextView
+            android:id="@+id/coThresholdHint"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="4dp"
+            android:fontFamily="sans-serif-light"
+            android:text="* Eşik değerini ayarlamak için kırmızı çubuğa dokun ve sürükle"
+            android:textColor="#666666"
+            android:textSize="10sp"
+            android:textStyle="italic" />
+
+    </LinearLayout>
+
+    <ImageView
+        android:id="@+id/co2image2"
+        android:layout_width="42dp"
+        android:layout_height="38dp"
+        android:layout_marginStart="16dp"
+        android:layout_marginTop="48dp"
+        android:src="@drawable/tempature"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/co2image" />
+
+    <TextView
+        android:id="@+id/textView6"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginStart="11dp"
+        android:fontFamily="@font/inter_semi_bold"
+        android:text="Sıcaklık"
+        android:textColor="#000000"
+        android:textSize="12sp"
+        app:layout_constraintStart_toEndOf="@id/co2image2"
+        app:layout_constraintTop_toTopOf="@id/co2image2"
+        app:layout_constraintBottom_toTopOf="@id/temperatureContainer" />
+
+    <LinearLayout
+        android:id="@+id/temperatureContainer"
+        android:layout_width="0dp"
+        android:layout_height="wrap_content"
+        android:layout_marginEnd="16dp"
+        android:orientation="vertical"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="@id/textView6"
+        app:layout_constraintTop_toBottomOf="@id/textView6">
+
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:orientation="horizontal">
+
+                <com.example.finalapp.CustomProgressBar
+                    android:id="@+id/temperatureProgressBar"
+                    android:layout_width="0dp"
+                    android:layout_height="14dp"
+                    android:layout_weight="1" />
+
+                <TextView
+                    android:id="@+id/textView7"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_marginStart="8dp"
+                    android:fontFamily="sans-serif-light"
+                    android:text=""
+                    android:textColor="#000000"
+                    android:textSize="12sp" />
+        </LinearLayout>
+
+        <TextView
+            android:id="@+id/temperatureTextView"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_gravity="start"
+            android:fontFamily="sans-serif"
+            android:text="0 °C"
+            android:textColor="#000"
+            android:textSize="12sp" />
+
+        <TextView
+            android:id="@+id/temperatureThresholdHint"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="4dp"
+            android:fontFamily="sans-serif-light"
+            android:text="* Eşik değerini ayarlamak için kırmızı çubuğa dokun ve sürükle"
+            android:textColor="#666666"
+            android:textSize="10sp"
+            android:textStyle="italic" />
+
+    </LinearLayout>
+
+    <ImageView
+        android:id="@+id/co2image3"
+        android:layout_width="42dp"
+        android:layout_height="38dp"
+        android:layout_marginStart="16dp"
+        android:layout_marginTop="16dp"
+        android:src="@drawable/humidity"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@id/maviDikdortgen3" />
+
+    <TextView
+        android:id="@+id/textView2"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginStart="11dp"
+        android:fontFamily="@font/inter_semi_bold"
+        android:text="Nem"
+        android:textColor="#000000"
+        android:textSize="12sp"
+        app:layout_constraintStart_toEndOf="@id/co2image3"
+        app:layout_constraintTop_toTopOf="@id/co2image3"
+        app:layout_constraintBottom_toTopOf="@id/humidityContainer" />
+
+    <LinearLayout
+        android:id="@+id/humidityContainer"
+        android:layout_width="0dp"
+        android:layout_height="wrap_content"
+        android:orientation="vertical"
+        android:layout_marginEnd="16dp"
+        app:layout_constraintStart_toStartOf="@id/textView2"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintTop_toBottomOf="@id/textView2">
+
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:orientation="horizontal">
+
+                <com.example.finalapp.CustomProgressBar
+                    android:id="@+id/humidityProgressBar"
+                    android:layout_width="0dp"
+                    android:layout_weight="1"
+                    android:layout_height="14dp" />
+
+                <TextView
+                    android:id="@+id/textView3"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_marginStart="8dp"
+                    android:fontFamily="sans-serif-light"
+                    android:text=""
+                    android:textColor="#000000"
+                    android:textSize="12sp" />
+        </LinearLayout>
+
+        <TextView
+            android:id="@+id/humidityTextView"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_gravity="start"
+            android:fontFamily="sans-serif"
+            android:text="0 %"
+            android:textColor="#000"
+            android:textSize="12sp" />
+
+        <TextView
+            android:id="@+id/humidityThresholdHint"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="4dp"
+            android:fontFamily="sans-serif-light"
+            android:text="* Eşik değerini ayarlamak için kırmızı çubuğa dokun ve sürükle"
+            android:textColor="#666666"
+            android:textSize="10sp"
+            android:textStyle="italic" />
+
+    </LinearLayout>
+
+    <TextView
+        android:id="@+id/textView9"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginStart="300dp"
+        android:layout_marginEnd="16dp"
+        android:fontFamily="sans-serif-light"
+        android:text=""
+        android:textColor="#000000"
+        android:textSize="12sp"
+        app:layout_constraintBottom_toBottomOf="@id/co2image4"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toEndOf="@+id/textView8"
+        app:layout_constraintTop_toTopOf="@id/co2image4" />
+
+    <ImageView
+        android:id="@+id/co2image4"
+        android:layout_width="42dp"
+        android:layout_height="38dp"
+        android:layout_marginStart="16dp"
+        android:layout_marginTop="16dp"
+        android:src="@drawable/clock"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@id/maviDikdortgen4" />
+
+    <TextView
+        android:id="@+id/textView8"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginStart="11dp"
+        android:fontFamily="@font/inter_semi_bold"
+        android:text="Saat"
+        android:textColor="#000000"
+        android:textSize="12sp"
+        app:layout_constraintStart_toEndOf="@id/co2image4"
+        app:layout_constraintTop_toTopOf="@id/co2image4"
+        app:layout_constraintBottom_toTopOf="@id/timestampTextView" />
+
+    <TextView
+        android:id="@+id/timestampTextView"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:fontFamily="sans-serif"
+        android:text="900 "
+        android:textColor="#000"
+        android:textSize="12sp"
+        app:layout_constraintStart_toStartOf="@id/textView8"
+        app:layout_constraintTop_toBottomOf="@id/textView8" />
+
+    <Button
+        android:id="@+id/button"
+        android:layout_width="48dp"
+        android:layout_height="44dp"
+        android:layout_marginStart="16dp"
+        android:layout_marginBottom="16dp"
+        android:background="@drawable/main_logo_rectangle"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintStart_toStartOf="parent" />
+
+    <Button
+        android:id="@+id/logoutButton"
+        android:layout_width="48dp"
+        android:layout_height="44dp"
+        android:layout_marginEnd="16dp"
+        android:layout_marginBottom="16dp"
+        android:background="@drawable/logout"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintEnd_toEndOf="parent" />
+
+    <TextView
+        android:id="@+id/moodId2"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="8dp"
+        android:fontFamily="sans-serif"
+        android:text=""
+        android:textColor="#FFFFFF"
+        android:textSize="16sp"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@id/moodId" />
+
+    <Button
+        android:id="@+id/stopAlarm"
+        android:layout_width="48dp"
+        android:layout_height="44dp"
+        android:layout_marginStart="60dp"
+        android:layout_marginBottom="16dp"
+        android:background="@drawable/alarm"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintStart_toEndOf="@+id/button" />
+
+    <com.google.android.material.floatingactionbutton.FloatingActionButton
+        android:id="@+id/alarmControlButton"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_margin="16dp"
+        android:layout_marginStart="60dp"
+        android:contentDescription="Alarm Kontrol"
+        android:src="@drawable/ic_settings_control"
+        app:backgroundTint="#3F51B5"
+        app:elevation="6dp"
+        app:fabSize="normal"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintEnd_toStartOf="@+id/logoutButton"
+        app:layout_constraintStart_toEndOf="@+id/stopAlarm"
+        app:rippleColor="#FFFFFF"
+        app:tint="#FFFFFF" />
+
+</androidx.constraintlayout.widget.ConstraintLayout>

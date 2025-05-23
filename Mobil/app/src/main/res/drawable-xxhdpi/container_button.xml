@@ -1,0 +1,6 @@
+
+<layer-list xmlns:android="http://schemas.android.com/apk/res/android">
+<item>
+<color android:color="#FF1D61E7" />
+</item>
+</layer-list>

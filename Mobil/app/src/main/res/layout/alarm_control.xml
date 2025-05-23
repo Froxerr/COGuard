@@ -1,0 +1,487 @@
+<?xml version="1.0" encoding="utf-8"?>
+<androidx.coordinatorlayout.widget.CoordinatorLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:background="#F5F5F5">
+
+    <com.google.android.material.appbar.AppBarLayout
+        android:id="@+id/appBarLayout"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:background="@android:color/transparent"
+        android:elevation="0dp"
+        app:elevation="0dp">
+
+        <androidx.appcompat.widget.Toolbar
+            android:id="@+id/toolbar"
+            android:layout_width="match_parent"
+            android:layout_height="?attr/actionBarSize"
+            android:background="#3F51B5"
+            android:elevation="4dp"
+            app:layout_scrollFlags="scroll|enterAlways">
+
+            <TextView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_gravity="center"
+                android:text="Alarm Kontrol Sistemi"
+                android:textColor="#FFFFFF"
+                android:textSize="20sp"
+                android:textStyle="bold" />
+        </androidx.appcompat.widget.Toolbar>
+    </com.google.android.material.appbar.AppBarLayout>
+
+    <androidx.core.widget.NestedScrollView
+        android:id="@+id/nestedScrollView"
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:fillViewport="true"
+        android:overScrollMode="never"
+        app:layout_behavior="@string/appbar_scrolling_view_behavior">
+
+        <androidx.constraintlayout.widget.ConstraintLayout
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            android:padding="16dp">
+
+            <!-- Buzzer Durum Kontrolü -->
+            <com.google.android.material.card.MaterialCardView
+                android:id="@+id/buzzerCardView"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_margin="8dp"
+                android:clickable="true"
+                android:focusable="true"
+                android:stateListAnimator="@animator/card_lift_anim"
+                app:cardBackgroundColor="#FFFFFF"
+                app:cardCornerRadius="8dp"
+                app:cardElevation="4dp"
+                app:layout_constraintTop_toTopOf="parent">
+
+                <RelativeLayout
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:padding="16dp">
+
+                    <View
+                        android:id="@+id/buzzerOverlay"
+                        android:layout_width="match_parent"
+                        android:layout_height="match_parent"
+                        android:background="#80000000"
+                        android:visibility="gone"
+                        android:clickable="true" />
+
+                    <LinearLayout
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:orientation="vertical"
+                        android:padding="16dp">
+
+                        <LinearLayout
+                            android:layout_width="match_parent"
+                            android:layout_height="wrap_content"
+                            android:gravity="center_vertical"
+                            android:orientation="horizontal">
+
+                            <ImageView
+                                android:layout_width="42dp"
+                                android:layout_height="42dp"
+                                android:background="@drawable/circle_background"
+                                android:padding="8dp"
+                                android:src="@drawable/ic_buzzer"
+                                android:tint="#3F51B5" />
+
+                            <TextView
+                                android:id="@+id/buzzerTitleTextView"
+                                android:layout_width="match_parent"
+                                android:layout_height="wrap_content"
+                                android:layout_marginStart="16dp"
+                                android:text="Buzzer Durum Kontrolü"
+                                android:textColor="#3F51B5"
+                                android:textSize="18sp"
+                                android:textStyle="bold" />
+                        </LinearLayout>
+
+                        <View
+                            android:layout_width="match_parent"
+                            android:layout_height="1dp"
+                            android:layout_marginTop="16dp"
+                            android:layout_marginBottom="16dp"
+                            android:background="#E0E0E0" />
+
+                        <LinearLayout
+                            android:layout_width="match_parent"
+                            android:layout_height="wrap_content"
+                            android:orientation="horizontal"
+                            android:gravity="center_vertical">
+
+                            <TextView
+                                android:layout_width="wrap_content"
+                                android:layout_height="wrap_content"
+                                android:text="Mevcut Durum:"
+                                android:textColor="#333333"
+                                android:textSize="16sp" />
+
+                            <ProgressBar
+                                android:id="@+id/buzzerProgressBar"
+                                android:layout_width="24dp"
+                                android:layout_height="24dp"
+                                android:layout_marginStart="8dp"
+                                android:indeterminateTint="#3F51B5"
+                                android:visibility="gone" />
+
+                            <TextView
+                                android:id="@+id/buzzerStatusTextView"
+                                android:layout_width="wrap_content"
+                                android:layout_height="wrap_content"
+                                android:layout_marginStart="8dp"
+                                android:text="Açık"
+                                android:textColor="#43A047"
+                                android:textSize="16sp"
+                                android:textStyle="bold" />
+                        </LinearLayout>
+
+                        <TextView
+                            android:layout_width="match_parent"
+                            android:layout_height="wrap_content"
+                            android:layout_marginTop="16dp"
+                            android:text="Manuel Kontrol:"
+                            android:textColor="#333333"
+                            android:textSize="16sp" />
+
+                        <LinearLayout
+                            android:layout_width="match_parent"
+                            android:layout_height="wrap_content"
+                            android:layout_marginTop="8dp">
+
+                            <com.google.android.material.button.MaterialButton
+                                android:id="@+id/buzzerOnButton"
+                                android:layout_width="0dp"
+                                android:layout_height="wrap_content"
+                                android:layout_marginEnd="4dp"
+                                android:layout_weight="1"
+                                android:backgroundTint="#43A047"
+                                android:padding="12dp"
+                                android:stateListAnimator="@animator/button_press_anim"
+                                android:text="AÇ"
+                                android:textColor="#FFFFFF"
+                                app:cornerRadius="8dp" />
+
+                            <com.google.android.material.button.MaterialButton
+                                android:id="@+id/buzzerOffButton"
+                                android:layout_width="0dp"
+                                android:layout_height="wrap_content"
+                                android:layout_marginStart="4dp"
+                                android:layout_weight="1"
+                                android:backgroundTint="#D32F2F"
+                                android:padding="12dp"
+                                android:stateListAnimator="@animator/button_press_anim"
+                                android:text="KAPAT"
+                                android:textColor="#FFFFFF"
+                                app:cornerRadius="8dp" />
+                        </LinearLayout>
+                    </LinearLayout>
+                </RelativeLayout>
+            </com.google.android.material.card.MaterialCardView>
+
+            <!-- Uyarı Işığı Kontrolü -->
+            <com.google.android.material.card.MaterialCardView
+                android:id="@+id/warningLightCardView"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_margin="8dp"
+                android:clickable="true"
+                android:focusable="true"
+                android:stateListAnimator="@animator/card_lift_anim"
+                app:cardBackgroundColor="#FFFFFF"
+                app:cardCornerRadius="8dp"
+                app:cardElevation="4dp"
+                app:layout_constraintTop_toBottomOf="@id/buzzerCardView">
+
+                <RelativeLayout
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:padding="16dp">
+
+                    <View
+                        android:id="@+id/warningLightOverlay"
+                        android:layout_width="match_parent"
+                        android:layout_height="match_parent"
+                        android:background="#80000000"
+                        android:visibility="gone"
+                        android:clickable="true" />
+
+                    <LinearLayout
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:orientation="vertical"
+                        android:padding="16dp">
+
+                        <LinearLayout
+                            android:layout_width="match_parent"
+                            android:layout_height="wrap_content"
+                            android:gravity="center_vertical"
+                            android:orientation="horizontal">
+
+                            <ImageView
+                                android:layout_width="42dp"
+                                android:layout_height="42dp"
+                                android:background="@drawable/circle_background"
+                                android:padding="8dp"
+                                android:src="@drawable/ic_warning_light"
+                                android:tint="#3F51B5" />
+
+                            <TextView
+                                android:id="@+id/warningLightTitleTextView"
+                                android:layout_width="match_parent"
+                                android:layout_height="wrap_content"
+                                android:layout_marginStart="16dp"
+                                android:text="Uyarı Işığı Kontrolü"
+                                android:textColor="#3F51B5"
+                                android:textSize="18sp"
+                                android:textStyle="bold" />
+                        </LinearLayout>
+
+                        <View
+                            android:layout_width="match_parent"
+                            android:layout_height="1dp"
+                            android:layout_marginTop="16dp"
+                            android:layout_marginBottom="16dp"
+                            android:background="#E0E0E0" />
+
+                        <LinearLayout
+                            android:layout_width="match_parent"
+                            android:layout_height="wrap_content"
+                            android:orientation="horizontal"
+                            android:gravity="center_vertical">
+
+                            <TextView
+                                android:layout_width="wrap_content"
+                                android:layout_height="wrap_content"
+                                android:text="Mevcut Durum:"
+                                android:textColor="#333333"
+                                android:textSize="16sp" />
+
+                            <ProgressBar
+                                android:id="@+id/warningLightProgressBar"
+                                android:layout_width="24dp"
+                                android:layout_height="24dp"
+                                android:layout_marginStart="8dp"
+                                android:indeterminateTint="#3F51B5"
+                                android:visibility="gone" />
+
+                            <TextView
+                                android:id="@+id/warningLightStatusTextView"
+                                android:layout_width="wrap_content"
+                                android:layout_height="wrap_content"
+                                android:layout_marginStart="8dp"
+                                android:text="Kapalı"
+                                android:textColor="#D32F2F"
+                                android:textSize="16sp"
+                                android:textStyle="bold" />
+                        </LinearLayout>
+
+                        <TextView
+                            android:layout_width="match_parent"
+                            android:layout_height="wrap_content"
+                            android:layout_marginTop="16dp"
+                            android:text="Manuel Kontrol:"
+                            android:textColor="#333333"
+                            android:textSize="16sp" />
+
+                        <LinearLayout
+                            android:layout_width="match_parent"
+                            android:layout_height="wrap_content"
+                            android:layout_marginTop="8dp">
+
+                            <com.google.android.material.button.MaterialButton
+                                android:id="@+id/warningLightOnButton"
+                                android:layout_width="0dp"
+                                android:layout_height="wrap_content"
+                                android:layout_marginEnd="4dp"
+                                android:layout_weight="1"
+                                android:backgroundTint="#43A047"
+                                android:padding="12dp"
+                                android:stateListAnimator="@animator/button_press_anim"
+                                android:text="AÇ"
+                                android:textColor="#FFFFFF"
+                                app:cornerRadius="8dp" />
+
+                            <com.google.android.material.button.MaterialButton
+                                android:id="@+id/warningLightOffButton"
+                                android:layout_width="0dp"
+                                android:layout_height="wrap_content"
+                                android:layout_marginStart="4dp"
+                                android:layout_weight="1"
+                                android:backgroundTint="#D32F2F"
+                                android:padding="12dp"
+                                android:stateListAnimator="@animator/button_press_anim"
+                                android:text="KAPAT"
+                                android:textColor="#FFFFFF"
+                                app:cornerRadius="8dp" />
+                        </LinearLayout>
+                    </LinearLayout>
+                </RelativeLayout>
+            </com.google.android.material.card.MaterialCardView>
+
+            <!-- Pencere Durumu Kontrolü -->
+            <com.google.android.material.card.MaterialCardView
+                android:id="@+id/windowCardView"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_margin="8dp"
+                android:clickable="true"
+                android:focusable="true"
+                android:stateListAnimator="@animator/card_lift_anim"
+                app:cardBackgroundColor="#FFFFFF"
+                app:cardCornerRadius="8dp"
+                app:cardElevation="4dp"
+                app:layout_constraintTop_toBottomOf="@id/warningLightCardView">
+
+                <RelativeLayout
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:padding="16dp">
+
+                    <View
+                        android:id="@+id/windowOverlay"
+                        android:layout_width="match_parent"
+                        android:layout_height="match_parent"
+                        android:background="#80000000"
+                        android:visibility="gone"
+                        android:clickable="true" />
+
+                    <LinearLayout
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:orientation="vertical"
+                        android:padding="16dp">
+
+                        <LinearLayout
+                            android:layout_width="match_parent"
+                            android:layout_height="wrap_content"
+                            android:gravity="center_vertical"
+                            android:orientation="horizontal">
+
+                            <ImageView
+                                android:layout_width="42dp"
+                                android:layout_height="42dp"
+                                android:background="@drawable/circle_background"
+                                android:padding="8dp"
+                                android:src="@drawable/ic_window"
+                                android:tint="#3F51B5" />
+
+                            <TextView
+                                android:id="@+id/windowTitleTextView"
+                                android:layout_width="match_parent"
+                                android:layout_height="wrap_content"
+                                android:layout_marginStart="16dp"
+                                android:text="Pencere Durumu Kontrolü"
+                                android:textColor="#3F51B5"
+                                android:textSize="18sp"
+                                android:textStyle="bold" />
+                        </LinearLayout>
+
+                        <View
+                            android:layout_width="match_parent"
+                            android:layout_height="1dp"
+                            android:layout_marginTop="16dp"
+                            android:layout_marginBottom="16dp"
+                            android:background="#E0E0E0" />
+
+                        <LinearLayout
+                            android:layout_width="match_parent"
+                            android:layout_height="wrap_content"
+                            android:orientation="horizontal"
+                            android:gravity="center_vertical">
+
+                            <TextView
+                                android:layout_width="wrap_content"
+                                android:layout_height="wrap_content"
+                                android:text="Mevcut Durum:"
+                                android:textColor="#333333"
+                                android:textSize="16sp" />
+
+                            <ProgressBar
+                                android:id="@+id/windowProgressBar"
+                                android:layout_width="24dp"
+                                android:layout_height="24dp"
+                                android:layout_marginStart="8dp"
+                                android:indeterminateTint="#3F51B5"
+                                android:visibility="gone" />
+
+                            <TextView
+                                android:id="@+id/windowStatusTextView"
+                                android:layout_width="wrap_content"
+                                android:layout_height="wrap_content"
+                                android:layout_marginStart="8dp"
+                                android:text="Kapalı"
+                                android:textColor="#D32F2F"
+                                android:textSize="16sp"
+                                android:textStyle="bold" />
+                        </LinearLayout>
+
+                        <TextView
+                            android:layout_width="match_parent"
+                            android:layout_height="wrap_content"
+                            android:layout_marginTop="16dp"
+                            android:text="Manuel Kontrol:"
+                            android:textColor="#333333"
+                            android:textSize="16sp" />
+
+                        <LinearLayout
+                            android:layout_width="match_parent"
+                            android:layout_height="wrap_content"
+                            android:layout_marginTop="8dp">
+
+                            <com.google.android.material.button.MaterialButton
+                                android:id="@+id/windowOpenButton"
+                                android:layout_width="0dp"
+                                android:layout_height="wrap_content"
+                                android:layout_marginEnd="4dp"
+                                android:layout_weight="1"
+                                android:backgroundTint="#43A047"
+                                android:padding="12dp"
+                                android:stateListAnimator="@animator/button_press_anim"
+                                android:text="AÇ"
+                                android:textColor="#FFFFFF"
+                                app:cornerRadius="8dp" />
+
+                            <com.google.android.material.button.MaterialButton
+                                android:id="@+id/windowCloseButton"
+                                android:layout_width="0dp"
+                                android:layout_height="wrap_content"
+                                android:layout_marginStart="4dp"
+                                android:layout_weight="1"
+                                android:backgroundTint="#D32F2F"
+                                android:padding="12dp"
+                                android:stateListAnimator="@animator/button_press_anim"
+                                android:text="KAPAT"
+                                android:textColor="#FFFFFF"
+                                app:cornerRadius="8dp" />
+                        </LinearLayout>
+                    </LinearLayout>
+                </RelativeLayout>
+            </com.google.android.material.card.MaterialCardView>
+
+            <com.google.android.material.button.MaterialButton
+                android:id="@+id/backButton"
+                android:layout_width="0dp"
+                android:layout_height="60dp"
+                android:layout_marginTop="24dp"
+                android:backgroundTint="#3F51B5"
+                android:padding="12dp"
+                android:stateListAnimator="@animator/button_press_anim"
+                android:text="Ana Sayfaya Dön"
+                android:textColor="#FFFFFF"
+                app:cornerRadius="12dp"
+                app:layout_constraintEnd_toEndOf="parent"
+                app:layout_constraintStart_toStartOf="parent"
+                app:layout_constraintTop_toBottomOf="@id/windowCardView" />
+
+        </androidx.constraintlayout.widget.ConstraintLayout>
+    </androidx.core.widget.NestedScrollView>
+
+</androidx.coordinatorlayout.widget.CoordinatorLayout> 

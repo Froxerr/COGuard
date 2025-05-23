@@ -1,0 +1,12 @@
+<resources>
+    <string name="app_name">Sensör Takip</string>
+    <string name="login">Giriş Yap</string>
+    <string name="register">Kayıt Ol</string>
+    <string name="email">E-posta</string>
+    <string name="password">Şifre</string>
+    <string name="please_fill_fields">Lütfen tüm alanları doldurun.</string>
+    <string name="login_success">Giriş başarılı!</string>
+    <string name="login_failed">Giriş başarısız: %1$s</string>
+    <string name="registration_success">Kayıt başarılı!</string>
+    <string name="registration_failed">Kayıt başarısız: %1$s</string>
+</resources> 

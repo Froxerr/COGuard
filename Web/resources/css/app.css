@@ -1,0 +1,42 @@
+@import 'tailwindcss';
+
+@source '../../vendor/laravel/framework/src/Illuminate/Pagination/resources/views/*.blade.php';
+@source '../../storage/framework/views/*.php';
+@source "../**/*.blade.php";
+@source "../**/*.js";
+@source "../**/*.vue";
+
+@theme {
+    --font-sans: 'Instrument Sans', ui-sans-serif, system-ui, sans-serif, 'Apple Color Emoji', 'Segoe UI Emoji',
+        'Segoe UI Symbol', 'Noto Color Emoji';
+}
+
+.btn-primary {
+    background-color: #6366f1; /* Modern indigo rengi */
+    border-color: #6366f1;
+    color: #fff;
+    transition: all 0.3s ease;
+    box-shadow: 0 4px 6px -1px rgba(99, 102, 241, 0.2);
+}
+
+.btn-primary:hover {
+    background-color: #4f46e5; /* Biraz daha koyu indigo */
+    border-color: #4f46e5;
+    transform: translateY(-2px);
+    box-shadow: 0 6px 8px -1px rgba(99, 102, 241, 0.3);
+}
+
+.btn-secondary {
+    background-color: #f3f4f6; /* Açık gri */
+    border-color: #e5e7eb;
+    color: #4b5563; /* Koyu gri metin */
+    transition: all 0.3s ease;
+    box-shadow: 0 4px 6px -1px rgba(0, 0, 0, 0.1);
+}
+
+.btn-secondary:hover {
+    background-color: #e5e7eb; /* Biraz daha koyu gri */
+    border-color: #d1d5db;
+    transform: translateY(-2px);
+    box-shadow: 0 6px 8px -1px rgba(0, 0, 0, 0.15);
+}
