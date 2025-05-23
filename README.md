@@ -68,7 +68,7 @@ Akıllı güvenlik sisteminin kalbini oluşturan bu donanım, ortamdan karbonmon
 
 ### Kurulum
 1. Tüm bileşenleri aşağıdaki videoya göre uygun bir şekilde bağlayın.
-2. [Ardunio Bileşenleri](https://youtu.be/nTPt9R-dgNk)
+2. [Esp8266 ile Bileşenlerin Bağlanımı](https://youtu.be/nTPt9R-dgNk)
 3. `sketch_mar14a.ino` dosyasını Arduino IDE ile açın.
 4. Kodda aşağıdaki bilgileri güncelleyin:
    - Firebase URL ve API Key
